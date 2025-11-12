@@ -15,9 +15,9 @@ const Home = () => {
 
 // Alternative with image sources
 const imageLogos = [
-  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+  {text:"Designing", src: "", alt: "Designing", href: "https://company1.com" },
+  {text:"Graphics", src: "", alt: "UI/UX", href: "https://company2.com" },
+  {text:"Backend", src: "", alt: "System", href: "https://company3.com" },
 ];
 
 
@@ -159,7 +159,7 @@ const imageLogos = [
       <Box className="emp-space-divider"></Box>
     </Box>
      <LogoLoop
-        logos={techLogos}
+        logos={imageLogos}
         speed={100}
         direction="left"
         logoHeight={100}
