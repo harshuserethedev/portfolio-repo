@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
+import { LuSparkle } from "react-icons/lu";
 
 const ANIMATION_CONFIG = {
   SMOOTH_TAU: 0.25,
@@ -354,20 +355,22 @@ export const LogoLoop = memo(
             decoding="async"
             draggable={false}
           />) : (
-           <div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:"2vw"}}>
-            <span
+           <div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:"4vw"}}>
+            <div
              style={{
               fontSize:"4vw",
               color:"#ffffff67",
+              marginLeft:"4vw"
             
             }}
-            >X</span>
-             <h1
+            ><LuSparkle /> </div>
+
+             <div
             style={{
               fontSize:"4vw",
               color:"#ffffff67",
             }}
-            >{item.alt}</h1>
+            >{item.alt}</div>
            </div>
           )
         );
