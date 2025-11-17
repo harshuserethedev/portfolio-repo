@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
 import { LuSparkle } from "react-icons/lu";
 import { useSelector } from "react-redux";
+import '../../assets/styles/LogoScroller.css';
 
 const ANIMATION_CONFIG = {
   SMOOTH_TAU: 0.25,
@@ -364,16 +365,17 @@ export const LogoLoop = memo(
             <div
              style={{
               fontSize:"4vw",
-              color:"#9f9f9fff",
+              color:"#575757ff",
               marginLeft:"4vw"
             
             }}
             ><LuSparkle /> </div>
 
              <div
+             className="scroll-text"
             style={{
               fontSize:"4vw",
-              color:"#9f9f9fff",
+              color:"#575757ff",
             }}
             >{item.alt}</div>
            </div>
