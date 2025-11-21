@@ -6,6 +6,7 @@ import LogoLoop from "../components/home/LogoLoop";
 import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { useSelector } from "react-redux";
 import AboutMe from "../components/home/AboutMe";
+import MyProjects from "../components/home/MyProjects";
 
 const Home = () => {
 
@@ -185,6 +186,7 @@ const buttonClass = 'knowme-button ' + (themeValues.mode === 'light' ? 'light-mo
         ariaLabel="Technology partners"
       />
       <AboutMe styles={styles} />
+      <MyProjects />
    </>
   );
 };
