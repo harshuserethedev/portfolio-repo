@@ -339,6 +339,7 @@ export const ChipsLoop = memo(
             role="list"
             aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
+          
           >
             {logos.map((item, itemIndex) =>
               renderLogoItem(item, `${copyIndex}-${itemIndex}`)

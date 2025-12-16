@@ -14,6 +14,8 @@ import AboutMe from "../components/home/AboutMe";
 import MyProjects from "../components/home/MyProjects";
 import AreaOfExpertise from "../components/home/AreaOfExpertise";
 import ChipsLoop from "../components/shared/ChipsLoop";
+import Testimonal from "../components/home/Testimonal";
+import Footer from "../components/home/Footer";
 
 const Home = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
@@ -321,6 +323,8 @@ const Home = () => {
         fadeOutColor={styles?.mainTheme?.backgroundColor}
         ariaLabel="Technology partners"
       />
+      <Testimonal />
+      <Footer />
     </>
   );
 };
