@@ -30,7 +30,7 @@ const testimonials = [
   },
 ];
 
-const TestimonialSlider = ({ slideInterval = 18000 }) => {
+const TestimonialSlider = ({ slideInterval = 18000, styles }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
@@ -83,8 +83,8 @@ const TestimonialSlider = ({ slideInterval = 18000 }) => {
   return (
     <div
       style={{
-        backgroundColor: "#000",
-        color: "#fff",
+        backgroundColor: styles?.mainTheme?.backgroundColor,
+        color: styles?.mainTheme?.color,
         //   padding: '80px 60px',
         //   minHeight: '400px',
         display: "flex",
@@ -111,57 +111,52 @@ const TestimonialSlider = ({ slideInterval = 18000 }) => {
         >
           {/* Avatar with Progress Border */}
           <div
-            style={{
-              position: "relative",
-              width: "100px",
-              height: "100px",
-            }}
-          >
-            {/* Progress Circle */}
-            <svg
-              style={{
-                position: "absolute",
-                top: -6,
-                left: -6,
-                width: "calc(100% + 12px)",
-                height: "calc(100% + 12px)",
-                transform: "rotate(-90deg)",
-              }}
-            >
-              <circle
-                cx="56"
-                cy="56"
-                r="48"
-                fill="none"
-                stroke="#333"
-                strokeWidth="3"
-              />
-              <circle
-                cx="56"
-                cy="56"
-                r="48"
-                fill="none"
-                stroke="#fff"
-                strokeWidth="3"
-                strokeDasharray={circumference}
-                strokeDashoffset={circumference * (1 - progress / 100)}
-                style={{ transition: "stroke-dashoffset 0.05s linear" }}
-              />
-            </svg>
+  style={{
+    position: "relative",
+    width: "100px",
+    aspectRatio: "1 / 1", // keeps it responsive
+  }}
+>
+  {/* Progress ring */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      borderRadius: "50%",
+      background: `conic-gradient(
+        ${styles?.mainTheme?.epicColor} ${progress}%,
+        ${styles?.mainTheme?.backgroundColor} 0
+      )`,
+      padding: "3px", // thickness of ring
+      transition: "background 0.2s linear",
+    }}
+  >
+    {/* Inner background */}
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        borderRadius: "50%",
+        background: "#dfdfdf",
+      }}
+    />
+  </div>
 
-            {/* Avatar */}
-            <img
-              src={currentTestimonial.image}
-              alt={currentTestimonial.name}
-              style={{
-                width: "100%",
-                height: "100%",
-                borderRadius: "50%",
-                border: "4px solid #000",
-                objectFit: "cover",
-              }}
-            />
-          </div>
+  {/* Avatar */}
+  <img
+    src={currentTestimonial.image}
+    alt={currentTestimonial.name}
+    style={{
+      position: "absolute",
+      inset: "6px", // space for ring
+      width: "calc(100% - 12px)",
+      height: "calc(100% - 12px)",
+      borderRadius: "50%",
+      objectFit: "cover",
+    }}
+  />
+</div>
+
 
           {/* Name and Role */}
           <div>
@@ -201,12 +196,12 @@ const TestimonialSlider = ({ slideInterval = 18000 }) => {
               : currentTestimonial.text}{" "}
             <span
               style={{
-                color: "#fdfdfdff",
+                color: styles?.mainTheme?.color,
                 fontWeight: 500,
                 cursor: "pointer",
               }}
             >
-              see more
+              ... see more
             </span>
           </p>
         </div>
@@ -232,7 +227,7 @@ const TestimonialSlider = ({ slideInterval = 18000 }) => {
               display: "flex",
               alignItems: "center",
               gap: "8px",
-              color: "#fff",
+              color: styles?.mainTheme?.color,
               textDecoration: "none",
               fontSize: "14px",
               transition: "opacity 0.2s",
@@ -268,7 +263,7 @@ const TestimonialSlider = ({ slideInterval = 18000 }) => {
               style={{
                 background: "transparent",
                 border: "none",
-                color: "#fff",
+                color: styles?.mainTheme?.color,
                 cursor: "pointer",
                 padding: "8px",
                 display: "flex",
@@ -306,7 +301,7 @@ const TestimonialSlider = ({ slideInterval = 18000 }) => {
               style={{
                 background: "transparent",
                 border: "none",
-                color: "#fff",
+                color: styles?.mainTheme?.color,
                 cursor: "pointer",
                 padding: "8px",
                 display: "flex",

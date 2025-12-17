@@ -269,7 +269,7 @@ const Footer = () => {
           
           footer > div > div:last-child {
             flex-direction: column;
-            align-items: flex-start !important;
+            align-items: center !important;
             gap: 16px !important;
           }
           
