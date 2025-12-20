@@ -1,8 +1,8 @@
-import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css'
-import Home from './pages/Home';
-import Header from './components/home/Header';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Header from "./components/home/Header";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
         <Route path="*" element={<div>404</div>} />
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

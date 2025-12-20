@@ -1,25 +1,56 @@
 import { Typography, Box, Button } from "@mui/material";
 import { LuSparkle, LuCodepen } from "react-icons/lu";
-import React from "react";
+import React, { useState } from "react";
 import "../../assets/styles/AreaOfExpertise.css";
 import { useSelector } from "react-redux";
 import ServiceCard from "./ServiceCard";
- 
 
 const AreaOfExpertise = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
   const themeValues = useSelector((state) => state.theme);
-   
+  const [dynamicImage, setDynamicImage] = useState(
+    "https://plus.unsplash.com/premium_photo-1696824306557-bf54fc73e2fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  );
+
   const services = [
-    {icon: LuCodepen, title:'Development', description:'Building responsive websites. Providing the users an enriching experience that responds to any device and screen size.', pic:""},
-    {icon: LuCodepen, title:'UI/UX Design', description:'Designing user-centric, modern interfaces that shapes how the audience interacts with the product.',  pic:""},
-    {icon: LuCodepen, title:'Branding', description:'Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.',  pic:""},
-    {icon: LuCodepen, title:'Graphic Design', description:'Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.',  pic:""},
-  ]
+    {
+      id: "01",
+      icon: LuCodepen,
+      title: "Development",
+      description:
+        "Building responsive websites. Providing the users an enriching experience that responds to any device and screen size.",
+      pic: "https://plus.unsplash.com/premium_photo-1696824306557-bf54fc73e2fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      id: "02",
+      icon: LuCodepen,
+      title: "UI/UX Design",
+      description:
+        "Designing user-centric, modern interfaces that shapes how the audience interacts with the product.",
+      pic: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      id: "03",
+      icon: LuCodepen,
+      title: "Branding",
+      description:
+        "Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.",
+      pic: "https://images.unsplash.com/photo-1613909207039-6b173b755cc1?q=80&w=947&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      id: "04",
+      icon: LuCodepen,
+      title: "Graphic Design",
+      description:
+        "Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.",
+      pic: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
 
   const handleServiceCard = (e) => {
-   console.log(e)
-  }
+    setDynamicImage(e.pic);
+  };
+
   return (
     <>
       {/* SECTION HEADER */}
@@ -62,32 +93,55 @@ const AreaOfExpertise = () => {
 
       {/* Content Part */}
       <Box
+        className="areaOfExpContentWrapper"
         sx={{
           display: "flex",
           width: "100%",
-          backgroundColor: "#000",
+          backgroundColor: styles?.mainTheme?.backgroundColor,
           justifyContent: "center",
           alignItems: "center",
           gap: 8,
-          paddingBottom:"100px"
+          paddingBottom: "100px",
         }}
       >
-        <Box sx={{ width: "625px", height: "355px", backgroundColor: "#000", display:"flex", justifyContent:"space-evenly", alignItems:"center", flexDirection:"column" }}>
-            {
-                services.map((item, index) => (
-                   <Box onClick={() => handleServiceCard(item)}>
-                     <ServiceCard key={index} icon={item.icon} title={item.title} description={item.description} />
-                    
-                    </Box>
-                ))
-            }
+        <Box
+          sx={{
+            width: "625px",
+            height: "355px",
+            backgroundColor: styles?.mainTheme?.backgroundColor,
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          {services.map((item, index) => (
+            <Box
+              sx={{ backgroundColor: styles?.mainTheme?.backgroundColor }}
+              key={index}
+              onClick={() => handleServiceCard(item)}
+            >
+              <ServiceCard
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                id={item.id}
+                themeColor={styles?.mainTheme}
+              />
+            </Box>
+          ))}
         </Box>
         <Box
           component="img"
-          src="https://images.unsplash.com/photo-1764813824530-eb9e431ea89d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Example"
-          sx={{ width: "625px", height: "355px", backgroundColor: "#000", borderRadius:"25px" }}
-
+          src={dynamicImage}
+          alt="Area of Expertise"
+          sx={{
+            width: "625px",
+            height: "355px",
+            backgroundColor: "#0000",
+            borderRadius: "25px",
+          }}
         />
       </Box>
     </>

@@ -47,8 +47,7 @@ const MyProjects = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
   const themeValues = useSelector((state) => state.theme);
 
-  const buttonClass =
-    (themeValues.mode === "light" ? "light-mode" : "dark-mode");
+  const buttonClass = themeValues.mode === "light" ? "light-mode" : "dark-mode";
   return (
     <>
       {/* SECTION HEADER */}
@@ -74,7 +73,11 @@ const MyProjects = () => {
 
         <Typography
           variant="h3"
-          sx={{ color: styles?.mainTheme?.color, fontSize: "48px", marginTop: "10px" }}
+          sx={{
+            color: styles?.mainTheme?.color,
+            fontSize: "48px",
+            marginTop: "10px",
+          }}
         >
           Selected Projects
         </Typography>
@@ -87,7 +90,12 @@ const MyProjects = () => {
 
       {/* PROJECT GRID */}
       <Box
-        sx={{ pl: 8, pr: 8, pb: 8, backgroundColor: styles?.mainTheme?.backgroundColor }}
+        sx={{
+          pl: 8,
+          pr: 8,
+          pb: 8,
+          backgroundColor: styles?.mainTheme?.backgroundColor,
+        }}
         className="projects-wrapper py-md grid grid-cols-1 grid-rows-[masonry] gap-y-10 sm:grid-cols-2 sm:gap-x-16 sm:gap-y-0 px-10"
       >
         {projects.map((p, index) => (
@@ -98,7 +106,7 @@ const MyProjects = () => {
             <a href={p.link} className="h-fit w-full">
               <div
                 style={{
-                  backgroundColor:styles?.mainTheme?.backgroundColor,
+                  backgroundColor: styles?.mainTheme?.backgroundColor,
                   padding: "25px",
                   marginTop: p.margin,
                 }}
@@ -126,10 +134,13 @@ const MyProjects = () => {
               </div>
 
               {/* TEXT SECTION */}
-              <div className="mt-4 space-y-2">
-                <h5 className="text-white text-xl"
-                style={{color: styles?.mainTheme?.color}}
-                >{p.title}</h5>
+              <div className="mt-4 space-y-2 inner-card-lable">
+                <h5
+                  className="text-white text-xl"
+                  style={{ color: styles?.mainTheme?.color }}
+                >
+                  {p.title}
+                </h5>
 
                 <div className="flex justify-between">
                   <div className="flex flex-wrap gap-2">
@@ -146,11 +157,21 @@ const MyProjects = () => {
             </a>
           </div>
         ))}
-
-     
       </Box>
-        <Box sx={{display:"flex", justifyContent:"center", alignItems:"center", backgroundColor:styles?.mainTheme?.backgroundColor, width:"100%"}}>
-         <Button variant="outlined" color="primary" className={buttonClass + " view-all-projects-btn"}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: styles?.mainTheme?.backgroundColor,
+          width: "100%",
+        }}
+      >
+        <Button
+          variant="outlined"
+          color="primary"
+          className={buttonClass + " view-all-projects-btn"}
+        >
           View All Projects
         </Button>
       </Box>

@@ -27,30 +27,41 @@ const Header = () => {
     dispatch(
       setStyles({
         mainTheme: {
-          backgroundColor: themeValues.mode === 'dark' ? "#f6f9fb" : "#0a0b0c", // swapped for post-toggle
-          color: themeValues.mode === 'dark' ? "#000" : "#fff"
+          backgroundColor: themeValues.mode === "dark" ? "#f6f9fb" : "#0a0b0c", // swapped for post-toggle
+          color: themeValues.mode === "dark" ? "#000" : "#fff",
         },
         activeClass: {
-          activeColor: themeValues.mode === 'dark' ? "#000" : "#fff",
-          nonActiveColor: themeValues.mode === 'dark' ? "gray" : "#5d5d68"
+          activeColor: themeValues.mode === "dark" ? "#000" : "#fff",
+          nonActiveColor: themeValues.mode === "dark" ? "gray" : "#5d5d68",
         },
         icon: {
-          color: themeValues.mode === 'dark' ? "#000" : "#fff"
-        }
-      })
+          color: themeValues.mode === "dark" ? "#000" : "#fff",
+        },
+      }),
     );
   };
 
   return (
     <Box
       className="nav-container"
-      sx={{ backgroundColor: styles.mainTheme.backgroundColor, color: styles.mainTheme.color }}
+      sx={{
+        backgroundColor: styles.mainTheme.backgroundColor,
+        color: styles.mainTheme.color,
+        zIndex:"99"
+      }}
     >
       <Box
         className="nav-inner-container"
         sx={{ backgroundColor: styles.mainTheme.backgroundColor }}
       >
-        <Box sx={{ fontSize: "18px", cursor: "pointer", fontWeight: "500", color: styles.mainTheme.color }}>
+        <Box
+          sx={{
+            fontSize: "18px",
+            cursor: "pointer",
+            fontWeight: "500",
+            color: styles.mainTheme.color,
+          }}
+        >
           HU
         </Box>
         <Box className="navigation-container">
@@ -73,10 +84,18 @@ const Header = () => {
           ))}
         </Box>
         <IconButton>
-          {themeValues.mode === 'light' ? (
-            <LuMoon onClick={handleThemeToggle} className="icons" style={{ color: styles.icon.color }} />
+          {themeValues.mode === "light" ? (
+            <LuMoon
+              onClick={handleThemeToggle}
+              className="icons"
+              style={{ color: styles.icon.color }}
+            />
           ) : (
-            <LuSun onClick={handleThemeToggle} className="icons" style={{ color: styles.icon.color }} />
+            <LuSun
+              onClick={handleThemeToggle}
+              className="icons"
+              style={{ color: styles.icon.color }}
+            />
           )}
         </IconButton>
       </Box>

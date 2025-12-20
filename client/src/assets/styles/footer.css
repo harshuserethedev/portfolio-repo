@@ -1,5 +1,5 @@
 @media (max-width: 499px) and (min-width: 300px) {
-  .scroll-text {
-    font-size: 8vw !important;
+  .footer-main-content {
+    padding-top: 100px;
   }
 }
