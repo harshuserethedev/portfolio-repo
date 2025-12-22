@@ -1,6 +1,6 @@
 .nav-container {
-  width: 100%;
-  height: 10%;
+  width: 100dvw;
+  height: 10dvh;
   position: fixed;
   padding: 15px;
   display: flex;
@@ -43,11 +43,20 @@
   border-radius: 50%;
 }
 
+.Toastify__progress-bar {
+  background: #b5fe6c !important;
+}
+
 /*Inside 600px - 500px*/
 @media (max-width: 600px) and (min-width: 500px) {
   .nav-inner-container {
     width: 100%;
   }
+  .css-1hsu12n{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+   
 }
 
 /*Inside 600px - 500px*/
@@ -57,5 +66,12 @@
   }
   .nav-list {
     display: none !important;
+  }
+    .css-1hsu12n{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .css-hvvpv0{
+   padding: 90px !important;
   }
 }

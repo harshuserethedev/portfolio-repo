@@ -6,12 +6,14 @@ import { Link, useLocation } from "react-router-dom";
 // import { useState } from "react"; // REMOVE useState
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTheme, setStyles } from "../../redux/themeSlice"; // Import setStyles if needed
+import { ToastContainer, toast, Slide } from "react-toastify";
 
 const Header = () => {
   const location = useLocation();
   const themeValues = useSelector((state) => state.theme);
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
   const dispatch = useDispatch();
+  const notify = () => toast("Feature is currently in testing!");
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -37,7 +39,7 @@ const Header = () => {
         icon: {
           color: themeValues.mode === "dark" ? "#000" : "#fff",
         },
-      }),
+      })
     );
   };
 
@@ -47,9 +49,22 @@ const Header = () => {
       sx={{
         backgroundColor: styles.mainTheme.backgroundColor,
         color: styles.mainTheme.color,
-        zIndex:"99"
+        zIndex: "99",
       }}
     >
+      <ToastContainer
+        position="top-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Slide}
+      />
       <Box
         className="nav-inner-container"
         sx={{ backgroundColor: styles.mainTheme.backgroundColor }}
@@ -83,7 +98,7 @@ const Header = () => {
             </ListItem>
           ))}
         </Box>
-        <IconButton>
+        {/* <IconButton onClick={notify}>
           {themeValues.mode === "light" ? (
             <LuMoon
               onClick={handleThemeToggle}
@@ -97,6 +112,10 @@ const Header = () => {
               style={{ color: styles.icon.color }}
             />
           )}
+        </IconButton> */}
+
+        <IconButton onClick={notify}>
+          <LuMoon className="icons" style={{ color: "#fff" }} />
         </IconButton>
       </Box>
     </Box>
