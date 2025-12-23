@@ -1,154 +1,154 @@
-import React from "react";
-import "../assets/styles/home.css";
-import { Box, Button, ListItem, Typography } from "@mui/material";
-import { LuArrowUpRight, LuHand } from "react-icons/lu";
-import LogoLoop from "../components/shared/LogoLoop";
+import React from 'react';
+import '../assets/styles/home.css';
+import { Box, Button, ListItem, Typography } from '@mui/material';
+import { LuArrowUpRight, LuHand } from 'react-icons/lu';
+import LogoLoop from '../components/shared/LogoLoop';
 import {
   SiReact,
   SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
-} from "react-icons/si";
-import { useSelector } from "react-redux";
-import AboutMe from "../components/home/AboutMe";
-import MyProjects from "../components/home/MyProjects";
-import AreaOfExpertise from "../components/home/AreaOfExpertise";
-import ChipsLoop from "../components/shared/ChipsLoop";
-import Testimonal from "../components/home/Testimonal";
-import Footer from "../components/home/Footer";
+} from 'react-icons/si';
+import { useSelector } from 'react-redux';
+import AboutMe from '../components/home/AboutMe';
+import MyProjects from '../components/home/MyProjects';
+import AreaOfExpertise from '../components/home/AreaOfExpertise';
+import ChipsLoop from '../components/shared/ChipsLoop';
+import Testimonal from '../components/home/Testimonal';
+import Footer from '../components/home/Footer';
 
 const Home = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
   const themeValues = useSelector((state) => state.theme);
 
   const techLogos = [
-    { node: <SiReact />, title: "React", href: "https://react.dev" },
-    { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+    { node: <SiReact />, title: 'React', href: 'https://react.dev' },
+    { node: <SiNextdotjs />, title: 'Next.js', href: 'https://nextjs.org' },
     {
       node: <SiTypescript />,
-      title: "TypeScript",
-      href: "https://www.typescriptlang.org",
+      title: 'TypeScript',
+      href: 'https://www.typescriptlang.org',
     },
     {
       node: <SiTailwindcss />,
-      title: "Tailwind CSS",
-      href: "https://tailwindcss.com",
+      title: 'Tailwind CSS',
+      href: 'https://tailwindcss.com',
     },
   ];
 
   // Alternative with image sources
   const imageLogos = [
     {
-      text: "Designing",
-      src: "",
-      alt: "Designing",
-      href: "https://company1.com",
+      text: 'Designing',
+      src: '',
+      alt: 'Designing',
+      href: 'https://company1.com',
     },
-    { text: "Graphics", src: "", alt: "UI/UX", href: "https://company2.com" },
-    { text: "Backend", src: "", alt: "System", href: "https://company3.com" },
+    { text: 'Graphics', src: '', alt: 'UI/UX', href: 'https://company2.com' },
+    { text: 'Backend', src: '', alt: 'System', href: 'https://company3.com' },
   ];
 
   const chipLogos = [
     {
       id: 1,
-      label: "React",
-      image: "../../public/images/chipsImages/React.js.svg",
+      label: 'React',
+      image: '../../public/images/chipsImages/React.js.svg',
     },
     {
       id: 2,
-      label: "Next.js",
-      image: "../../public/images/chipsImages/Next.js.svg",
+      label: 'Next.js',
+      image: '../../public/images/chipsImages/Next.js.svg',
     },
     {
       id: 3,
-      label: "Redux",
-      image: "../../public/images/chipsImages/Redux.svg",
+      label: 'Redux',
+      image: '../../public/images/chipsImages/Redux.svg',
     },
     {
       id: 4,
-      label: "Node.js",
-      image: "../../public/images/chipsImages/Node.js.svg",
+      label: 'Node.js',
+      image: '../../public/images/chipsImages/Node.js.svg',
     },
     {
       id: 5,
-      label: "Express.js",
-      image: "../../public/images/chipsImages/Express.js.svg",
+      label: 'Express.js',
+      image: '../../public/images/chipsImages/Express.js.svg',
     },
     {
       id: 6,
-      label: "MySQL",
-      image: "../../public/images/chipsImages/MySQL.svg",
+      label: 'MySQL',
+      image: '../../public/images/chipsImages/MySQL.svg',
     },
     {
       id: 7,
-      label: "MongoDB",
-      image: "../../public/images/chipsImages/MongoDB.svg",
+      label: 'MongoDB',
+      image: '../../public/images/chipsImages/MongoDB.svg',
     },
     {
       id: 8,
-      label: "PostgreSQL",
-      image: "../../public/images/chipsImages/PostgreSQL.svg",
+      label: 'PostgreSQL',
+      image: '../../public/images/chipsImages/PostgreSQL.svg',
     },
     {
       id: 9,
-      label: "Docker",
-      image: "../../public/images/chipsImages/Docker.svg",
+      label: 'Docker',
+      image: '../../public/images/chipsImages/Docker.svg',
     },
     {
       id: 10,
-      label: "Firebase",
-      image: "../../public/images/chipsImages/Firebase.svg",
+      label: 'Firebase',
+      image: '../../public/images/chipsImages/Firebase.svg',
     },
     {
       id: 11,
-      label: "AWS",
-      image: "../../public/images/chipsImages/AWS.svg",
+      label: 'AWS',
+      image: '../../public/images/chipsImages/AWS.svg',
     },
     {
       id: 12,
-      label: "GSAP",
-      image: "../../public/images/chipsImages/GSAP.svg",
+      label: 'GSAP',
+      image: '../../public/images/chipsImages/GSAP.svg',
     },
     {
       id: 13,
-      label: "Framer Motion",
-      image: "../../public/images/chipsImages/FramerMotion.svg",
+      label: 'Framer Motion',
+      image: '../../public/images/chipsImages/FramerMotion.svg',
     },
     {
       id: 14,
-      label: "Tailwind CSS",
-      image: "../../public/images/chipsImages/TailwindCSS.svg",
+      label: 'Tailwind CSS',
+      image: '../../public/images/chipsImages/TailwindCSS.svg',
     },
     {
       id: 15,
-      label: "GIT",
-      image: "../../public/images/chipsImages/GIT.svg",
+      label: 'GIT',
+      image: '../../public/images/chipsImages/GIT.svg',
     },
     {
       id: 16,
-      label: "HTML",
-      image: "../../public/images/chipsImages/HTML.svg",
+      label: 'HTML',
+      image: '../../public/images/chipsImages/HTML.svg',
     },
     {
       id: 17,
-      label: "CSS",
-      image: "../../public/images/chipsImages/CSS.svg",
+      label: 'CSS',
+      image: '../../public/images/chipsImages/CSS.svg',
     },
     {
       id: 18,
-      label: "JavaScript",
-      image: "../../public/images/chipsImages/JavaScript.svg",
+      label: 'JavaScript',
+      image: '../../public/images/chipsImages/JavaScript.svg',
     },
     {
       id: 19,
-      label: "TypeScript",
-      image: "../../public/images/chipsImages/TypeScript.svg",
+      label: 'TypeScript',
+      image: '../../public/images/chipsImages/TypeScript.svg',
     },
   ];
 
   const buttonClass =
-    "knowme-button " +
-    (themeValues.mode === "light" ? "light-mode" : "dark-mode");
+    'knowme-button ' +
+    (themeValues.mode === 'light' ? 'light-mode' : 'dark-mode');
 
   return (
     <>
@@ -156,44 +156,44 @@ const Home = () => {
         className="main"
         sx={{
           backgroundColor: styles?.mainTheme?.backgroundColor,
-          display: "flex",
-          flexDirection: "column",
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         <Box className="inner-wrapper">
           <Typography
             variant="h1"
             sx={{
-              fontSize: "16px",
+              fontSize: '16px',
               color: styles?.mainTheme?.color,
-              display: "flex",
-              justifyContent: "start",
-              alignItems: "center",
+              display: 'flex',
+              justifyContent: 'start',
+              alignItems: 'center',
               gap: 1,
             }}
           >
             <LuHand
               className="hand-wave"
               size={20}
-              style={{ color: "#b5fe6c" }}
-            />{" "}
+              style={{ color: '#b5fe6c' }}
+            />{' '}
             Hey! It's me Harsh,
           </Typography>
           <Typography
             className="headline"
             variant="h1"
             sx={{
-              fontSize: "72px",
-              fontWeight:"500 !important",
+              fontSize: '72px',
+              fontWeight: '500 !important',
               color: styles?.mainTheme?.color,
-              width: "80%",
-              lineHeight: "72px",
-              marginTop: "2%",
-              marginBottom: "4%",
+              width: '80%',
+              lineHeight: '72px',
+              marginTop: '2%',
+              marginBottom: '4%',
             }}
           >
-            Crafting{" "}
-            <span style={{ color: "#b5fe6c" }}>purpose driven experiences</span>{" "}
+            Crafting{' '}
+            <span style={{ color: '#b5fe6c' }}>purpose driven experiences</span>{' '}
             that inspire & engage.
           </Typography>
         </Box>
@@ -201,58 +201,58 @@ const Home = () => {
         <Box
           className="mobile-bottom"
           sx={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
           <Box
             className="mobile-bottom-inner"
             sx={{
-              width: "90%",
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "15px",
+              width: '90%',
+              display: 'flex',
+              justifyContent: 'space-between',
+              padding: '15px',
             }}
           >
             {/* LINK PAGE */}
             <Box
-              sx={{ color: "#8c8c9d", display: "flex" }}
+              sx={{ color: '#8c8c9d', display: 'flex' }}
               className="all-links"
             >
               <ListItem
                 sx={{
-                  textTransform: "uppercase",
-                  fontSize: "14px",
-                  cursor: "pointer",
+                  textTransform: 'uppercase',
+                  fontSize: '14px',
+                  cursor: 'pointer',
                 }}
               >
                 LinkedIn <LuArrowUpRight size={20} />
               </ListItem>
               <ListItem
                 sx={{
-                  textTransform: "uppercase",
-                  fontSize: "14px",
-                  cursor: "pointer",
+                  textTransform: 'uppercase',
+                  fontSize: '14px',
+                  cursor: 'pointer',
                 }}
               >
                 GitHub <LuArrowUpRight size={20} />
               </ListItem>
               <ListItem
                 sx={{
-                  textTransform: "uppercase",
-                  fontSize: "14px",
-                  cursor: "pointer",
+                  textTransform: 'uppercase',
+                  fontSize: '14px',
+                  cursor: 'pointer',
                 }}
               >
                 Benance <LuArrowUpRight size={20} />
               </ListItem>
               <ListItem
                 sx={{
-                  textTransform: "uppercase",
-                  fontSize: "14px",
-                  cursor: "pointer",
+                  textTransform: 'uppercase',
+                  fontSize: '14px',
+                  cursor: 'pointer',
                 }}
               >
                 Leetcode <LuArrowUpRight size={20} />
@@ -263,15 +263,15 @@ const Home = () => {
             <Box
               className="short-slogan-box"
               sx={{
-                width: "45%",
-                display: "flex",
-                flexDirection: "column",
+                width: '45%',
+                display: 'flex',
+                flexDirection: 'column',
                 gap: 3,
               }}
             >
               <Typography
                 variant="h1"
-                sx={{ fontSize: "16px", color: "#8c8c9d" }}
+                sx={{ fontSize: '16px', color: '#8c8c9d' }}
               >
                 I work with brands globally to build pixel-perfect, engaging,
                 and accessible digital experiences that drive results and
@@ -293,7 +293,7 @@ const Home = () => {
           className="emp-space-divider"
           style={{
             backgroundColor: styles?.mainTheme?.backgroundColor,
-            borderColor: themeValues.mode === "light" ? "#dfdfdf" : "#262626",
+            borderColor: themeValues.mode === 'light' ? '#dfdfdf' : '#262626',
           }}
         ></Box>
       </Box>

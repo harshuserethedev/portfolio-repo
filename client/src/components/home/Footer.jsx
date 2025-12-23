@@ -1,18 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import "../../assets/styles/footer.css";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import '../../assets/styles/footer.css';
 
 const Footer = () => {
-   const styles = useSelector((state) => state.theme.styles); 
+  const styles = useSelector((state) => state.theme.styles);
 
   const handleContactClick = () => {
     // Add your contact action here
-    console.log("Contact button clicked");
+    console.log('Contact button clicked');
   };
 
   const handleShoppingBagClick = () => {
     // Add your shopping bag action here
-    console.log("Shopping bag clicked");
+    console.log('Shopping bag clicked');
   };
 
   return (
@@ -20,51 +20,51 @@ const Footer = () => {
       style={{
         backgroundColor: styles?.mainTheme?.backgroundColor,
         color: styles?.mainTheme?.color,
-        padding: "80px 40px 40px",
-        position: "relative",
+        padding: '80px 40px 40px',
+        position: 'relative',
         //   fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
       }}
     >
       <div
         style={{
-          maxWidth: "1400px",
-          margin: "0 auto",
+          maxWidth: '1400px',
+          margin: '0 auto',
         }}
       >
         {/* Main Content Section */}
         <div
-        className="footer-main-content"
+          className="footer-main-content"
           style={{
-            textAlign: "center",
-            marginBottom: "120px",
+            textAlign: 'center',
+            marginBottom: '120px',
           }}
         >
           {/* Available Badge */}
           <div
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-              padding: "8px 16px",
-              borderRadius: "20px",
-              marginBottom: "32px",
-              backdropFilter: "blur(10px)",
-              border:"1px solid #6e6e6eff"
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              backgroundColor: 'rgba(255, 255, 255, 0.1)',
+              padding: '8px 16px',
+              borderRadius: '20px',
+              marginBottom: '32px',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid #6e6e6eff',
             }}
           >
             <div
               style={{
-                width: "8px",
-                height: "8px",
-                backgroundColor: "#4ade80",
-                borderRadius: "50%",
-                boxShadow: "0 0 8px #4ade80",
+                width: '8px',
+                height: '8px',
+                backgroundColor: '#4ade80',
+                borderRadius: '50%',
+                boxShadow: '0 0 8px #4ade80',
               }}
             ></div>
             <span
               style={{
-                fontSize: "14px",
+                fontSize: '14px',
                 color: styles?.mainTheme?.color,
               }}
             >
@@ -75,12 +75,12 @@ const Footer = () => {
           {/* Heading */}
           <h2
             style={{
-              fontSize: "72px",
-              fontWeight: "500",
-              lineHeight: "1.2",
-              margin: "0 0 40px 0",
-              letterSpacing: "-1px",
-              fontFamily: "clash_display",
+              fontSize: '72px',
+              fontWeight: '500',
+              lineHeight: '1.2',
+              margin: '0 0 40px 0',
+              letterSpacing: '-1px',
+              fontFamily: 'clash_display',
             }}
           >
             Let's create your
@@ -92,17 +92,16 @@ const Footer = () => {
           <button
             onClick={handleContactClick}
             style={{
-              backgroundColor: "transparent",
+              backgroundColor: 'transparent',
               color: styles?.mainTheme?.color,
-              border: "2px solid #6e6e6eff",
-              padding: "14px 40px",
-              fontSize: "16px",
-              borderRadius: "30px",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-              fontWeight: "500",
+              border: '2px solid #6e6e6eff',
+              padding: '14px 40px',
+              fontSize: '16px',
+              borderRadius: '30px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              fontWeight: '500',
             }}
-            
           >
             Contact Me
           </button>
@@ -111,18 +110,18 @@ const Footer = () => {
         {/* Bottom Section */}
         <div
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "20px",
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+            gap: '20px',
           }}
         >
           {/* Copyright */}
           <p
             style={{
-              fontSize: "14px",
-              color: "#888",
+              fontSize: '14px',
+              color: '#888',
               margin: 0,
             }}
           >
@@ -132,9 +131,9 @@ const Footer = () => {
           {/* Social Icons */}
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "24px",
+              display: 'flex',
+              alignItems: 'center',
+              gap: '24px',
             }}
           >
             {/* LinkedIn */}
@@ -143,11 +142,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: "#888",
-                transition: "color 0.3s ease",
+                color: '#888',
+                transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
             >
               <svg
                 width="22"
@@ -165,11 +164,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: "#888",
-                transition: "color 0.3s ease",
+                color: '#888',
+                transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
             >
               <svg
                 width="22"
@@ -187,11 +186,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: "#888",
-                transition: "color 0.3s ease",
+                color: '#888',
+                transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
             >
               <svg
                 width="22"
@@ -207,11 +206,11 @@ const Footer = () => {
             <a
               href="mailto:contact@example.com"
               style={{
-                color: "#888",
-                transition: "color 0.3s ease",
+                color: '#888',
+                transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
             >
               <svg
                 width="22"
@@ -232,11 +231,11 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                color: "#888",
-                transition: "color 0.3s ease",
+                color: '#888',
+                transition: 'color 0.3s ease',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#fff")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#888")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#888')}
             >
               <svg
                 width="22"

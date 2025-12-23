@@ -1,49 +1,50 @@
-import { Typography, Box, Button } from "@mui/material";
-import { LuSparkle, LuCodepen } from "react-icons/lu";
-import React, { useState } from "react";
-import "../../assets/styles/AreaOfExpertise.css";
-import { useSelector } from "react-redux";
-import ServiceCard from "./ServiceCard";
+import { Typography, Box, Button } from '@mui/material';
+import { LuSparkle, LuCodepen } from 'react-icons/lu';
+import React, { useState } from 'react';
+import '../../assets/styles/AreaOfExpertise.css';
+import { useSelector } from 'react-redux';
+import ServiceCard from './ServiceCard';
+import ShinyText from '../shared/ShinyText';
 
 const AreaOfExpertise = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
   const themeValues = useSelector((state) => state.theme);
   const [dynamicImage, setDynamicImage] = useState(
-    "https://plus.unsplash.com/premium_photo-1696824306557-bf54fc73e2fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    'https://plus.unsplash.com/premium_photo-1696824306557-bf54fc73e2fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   );
 
   const services = [
     {
-      id: "01",
+      id: '01',
       icon: LuCodepen,
-      title: "Development",
+      title: 'Development',
       description:
-        "Building responsive websites. Providing the users an enriching experience that responds to any device and screen size.",
-      pic: "https://plus.unsplash.com/premium_photo-1696824306557-bf54fc73e2fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        'Building responsive websites. Providing the users an enriching experience that responds to any device and screen size.',
+      pic: 'https://plus.unsplash.com/premium_photo-1696824306557-bf54fc73e2fb?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
-      id: "02",
+      id: '02',
       icon: LuCodepen,
-      title: "UI/UX Design",
+      title: 'UI/UX Design',
       description:
-        "Designing user-centric, modern interfaces that shapes how the audience interacts with the product.",
-      pic: "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        'Designing user-centric, modern interfaces that shapes how the audience interacts with the product.',
+      pic: 'https://images.unsplash.com/photo-1586717799252-bd134ad00e26?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
-      id: "03",
+      id: '03',
       icon: LuCodepen,
-      title: "Branding",
+      title: 'Branding',
       description:
-        "Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.",
-      pic: "https://images.unsplash.com/photo-1613909207039-6b173b755cc1?q=80&w=947&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        'Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.',
+      pic: 'https://images.unsplash.com/photo-1613909207039-6b173b755cc1?q=80&w=947&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
     {
-      id: "04",
+      id: '04',
       icon: LuCodepen,
-      title: "Graphic Design",
+      title: 'Graphic Design',
       description:
-        "Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.",
-      pic: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        'Building brand identities including working on logo, typography, iconography, colour palette, visual language, and brand personality.',
+      pic: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
   ];
 
@@ -57,20 +58,25 @@ const AreaOfExpertise = () => {
       <Box
         sx={{
           backgroundColor: styles?.mainTheme?.backgroundColor,
-          padding: "90px",
-          paddingTop: "150px",
+          padding: '90px',
+          paddingTop: '150px',
         }}
       >
-        <Box sx={{ display: "flex", gap: "10px" }}>
+        <Box sx={{ display: 'flex', gap: '10px' }}>
           <LuSparkle color="greenyellow" />
           <Typography
             sx={{
-              color: "greenyellow",
-              fontSize: "16px",
-              textTransform: "uppercase",
+              color: 'greenyellow',
+              fontSize: '16px',
+              textTransform: 'uppercase',
             }}
           >
-            Speciality
+            <ShinyText
+              text="Speciality"
+              disabled={false}
+              speed={1.2}
+              className="shinny-txt"
+            />
           </Typography>
         </Box>
 
@@ -78,9 +84,9 @@ const AreaOfExpertise = () => {
           variant="h3"
           sx={{
             color: styles?.mainTheme?.color,
-            fontSize: "48px",
-            marginTop: "10px",
-            fontFamily:"clash_display"
+            fontSize: '48px',
+            marginTop: '10px',
+            fontFamily: 'clash_display',
           }}
         >
           Areas of Expertise
@@ -96,24 +102,24 @@ const AreaOfExpertise = () => {
       <Box
         className="areaOfExpContentWrapper"
         sx={{
-          display: "flex",
-          width: "100%",
+          display: 'flex',
+          width: '100%',
           backgroundColor: styles?.mainTheme?.backgroundColor,
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: 'center',
+          alignItems: 'center',
           gap: 8,
-          paddingBottom: "100px",
+          paddingBottom: '100px',
         }}
       >
         <Box
           sx={{
-            width: "625px",
-            height: "355px",
+            width: '625px',
+            height: '355px',
             backgroundColor: styles?.mainTheme?.backgroundColor,
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            flexDirection: "column",
+            display: 'flex',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            flexDirection: 'column',
           }}
         >
           {services.map((item, index) => (
@@ -138,10 +144,10 @@ const AreaOfExpertise = () => {
           src={dynamicImage}
           alt="Area of Expertise"
           sx={{
-            width: "625px",
-            height: "355px",
-            backgroundColor: "#0000",
-            borderRadius: "25px",
+            width: '625px',
+            height: '355px',
+            backgroundColor: '#0000',
+            borderRadius: '25px',
           }}
         />
       </Box>

@@ -1,45 +1,46 @@
-import { Typography, Box, Button } from "@mui/material";
-import { LuSparkle } from "react-icons/lu";
-import React from "react";
-import "../../assets/styles/myprojects.css";
-import { useSelector } from "react-redux";
+import { Typography, Box, Button } from '@mui/material';
+import { LuSparkle } from 'react-icons/lu';
+import React from 'react';
+import '../../assets/styles/myprojects.css';
+import { useSelector } from 'react-redux';
+import ShinyText from '../shared/ShinyText';
 
 const projects = [
   {
-    title: "Aora",
-    tag: "Development",
-    year: "2024",
-    link: "projects/aora",
-    bg: "rgba(254 243 199)",
-    img: "https://plus.unsplash.com/premium_photo-1661293879952-c5c093282801?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    margin: "0%",
+    title: 'Aora',
+    tag: 'Development',
+    year: '2024',
+    link: 'projects/aora',
+    bg: 'rgba(254 243 199)',
+    img: 'https://plus.unsplash.com/premium_photo-1661293879952-c5c093282801?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    margin: '0%',
   },
   {
-    title: "Code Screenshot",
-    tag: "Development & Design",
-    year: "2024",
-    link: "projects/code-screenshot",
-    bg: "rgba(251 207 232)",
-    img: "https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    margin: "10%",
+    title: 'Code Screenshot',
+    tag: 'Development & Design',
+    year: '2024',
+    link: 'projects/code-screenshot',
+    bg: 'rgba(251 207 232)',
+    img: 'https://plus.unsplash.com/premium_photo-1678565869434-c81195861939?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    margin: '10%',
   },
   {
-    title: "iPhone 15 Pro",
-    tag: "Development & Design",
-    year: "2024",
-    link: "projects/iphone",
-    bg: "rgba(231 229 228)",
-    img: "https://images.unsplash.com/photo-1521939094609-93aba1af40d7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    margin: "0%",
+    title: 'iPhone 15 Pro',
+    tag: 'Development & Design',
+    year: '2024',
+    link: 'projects/iphone',
+    bg: 'rgba(231 229 228)',
+    img: 'https://images.unsplash.com/photo-1521939094609-93aba1af40d7?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    margin: '0%',
   },
   {
-    title: "Ochi Design",
-    tag: "Development & Design",
-    year: "2024",
-    link: "projects/ochi-design",
-    bg: "rgba(187 247 208)",
-    img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    margin: "10%",
+    title: 'Ochi Design',
+    tag: 'Development & Design',
+    year: '2024',
+    link: 'projects/ochi-design',
+    bg: 'rgba(187 247 208)',
+    img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    margin: '10%',
   },
 ];
 
@@ -47,27 +48,32 @@ const MyProjects = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
   const themeValues = useSelector((state) => state.theme);
 
-  const buttonClass = themeValues.mode === "light" ? "light-mode" : "dark-mode";
+  const buttonClass = themeValues.mode === 'light' ? 'light-mode' : 'dark-mode';
   return (
     <>
       {/* SECTION HEADER */}
       <Box
         sx={{
           backgroundColor: styles?.mainTheme?.backgroundColor,
-          padding: "90px",
-          paddingTop: "150px",
+          padding: '90px',
+          paddingTop: '150px',
         }}
       >
-        <Box sx={{ display: "flex", gap: "10px" }}>
+        <Box sx={{ display: 'flex', gap: '10px' }}>
           <LuSparkle color="greenyellow" />
           <Typography
             sx={{
-              color: "greenyellow",
-              fontSize: "16px",
-              textTransform: "uppercase",
+              color: 'greenyellow',
+              fontSize: '16px',
+              textTransform: 'uppercase',
             }}
           >
-            My Work
+            <ShinyText
+              text="My Work"
+              disabled={false}
+              speed={1.2}
+              className="shinny-txt"
+            />
           </Typography>
         </Box>
 
@@ -75,15 +81,15 @@ const MyProjects = () => {
           variant="h3"
           sx={{
             color: styles?.mainTheme?.color,
-            fontSize: "48px",
-            marginTop: "10px",
-            fontFamily:"clash_display"
+            fontSize: '48px',
+            marginTop: '10px',
+            fontFamily: 'clash_display',
           }}
         >
           Selected Projects
         </Typography>
 
-        <Typography sx={{ color: "#8c8c9d", marginTop: "5px" }}>
+        <Typography sx={{ color: '#8c8c9d', marginTop: '5px' }}>
           Here's a curated selection showcasing my expertise and the achieved
           results.
         </Typography>
@@ -108,7 +114,7 @@ const MyProjects = () => {
               <div
                 style={{
                   backgroundColor: styles?.mainTheme?.backgroundColor,
-                  padding: "25px",
+                  padding: '25px',
                   marginTop: p.margin,
                 }}
                 className="aspect-3/2 w-full overflow-hidden rounded-3xl prj-cards"
@@ -116,19 +122,19 @@ const MyProjects = () => {
                 <div
                   style={{
                     backgroundColor: p.bg,
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: "25px",
+                    width: '100%',
+                    height: '100%',
+                    borderRadius: '25px',
                   }}
                 >
                   <img
                     alt={p.title}
                     src={p.img}
                     style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: "25px",
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      borderRadius: '25px',
                     }}
                   />
                 </div>
@@ -161,17 +167,17 @@ const MyProjects = () => {
       </Box>
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
           backgroundColor: styles?.mainTheme?.backgroundColor,
-          width: "100%",
+          width: '100%',
         }}
       >
         <Button
           variant="outlined"
           color="primary"
-          className={buttonClass + " view-all-projects-btn"}
+          className={buttonClass + ' view-all-projects-btn'}
         >
           View All Projects
         </Button>

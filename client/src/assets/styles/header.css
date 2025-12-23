@@ -52,11 +52,10 @@
   .nav-inner-container {
     width: 100%;
   }
-  .css-1hsu12n{
+  .css-1hsu12n {
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
-   
 }
 
 /*Inside 600px - 500px*/
@@ -67,11 +66,11 @@
   .nav-list {
     display: none !important;
   }
-    .css-1hsu12n{
+  .css-1hsu12n {
     padding-left: 0px !important;
     padding-right: 0px !important;
   }
-  .css-hvvpv0{
-   padding: 90px !important;
+  .css-hvvpv0 {
+    padding: 90px !important;
   }
 }

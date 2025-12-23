@@ -1,21 +1,21 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @font-face {
-  font-family: "default_fonts_a";
-  src: url("/client/src/assets/fonts/fonts_a.ttf") format("truetype");
+  font-family: 'default_fonts_a';
+  src: url('/client/src/assets/fonts/fonts_a.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "default_fonts_b";
-  src: url("/client/src/assets/fonts/fonts_b.ttf") format("truetype");
+  font-family: 'default_fonts_b';
+  src: url('/client/src/assets/fonts/fonts_b.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: "clash_display";
-  src: url("../public/fonts/ClashDisplay-Medium.ttf");
+  font-family: 'clash_display';
+  src: url('../public/fonts/ClashDisplay-Medium.ttf');
 }
 
 body {
-  font-family: "clash_display";
+  font-family: 'clash_display';
 }
 
 ::selection {
@@ -24,7 +24,7 @@ body {
 }
 
 :root {
-  --bgColor: "#0a0b0c", --textColor: "#fff";
+  --bgColor: '#0a0b0c', --textColor: '#fff';
 }
 
 * {

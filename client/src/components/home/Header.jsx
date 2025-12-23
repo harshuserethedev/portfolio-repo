@@ -1,25 +1,25 @@
-import { Box, IconButton, ListItem } from "@mui/material";
-import React from "react";
-import "../../assets/styles/header.css";
-import { LuMoon, LuSun } from "react-icons/lu";
-import { Link, useLocation } from "react-router-dom";
+import { Box, IconButton, ListItem } from '@mui/material';
+import React from 'react';
+import '../../assets/styles/header.css';
+import { LuMoon, LuSun } from 'react-icons/lu';
+import { Link, useLocation } from 'react-router-dom';
 // import { useState } from "react"; // REMOVE useState
-import { useSelector, useDispatch } from "react-redux";
-import { toggleTheme, setStyles } from "../../redux/themeSlice"; // Import setStyles if needed
-import { ToastContainer, toast, Slide } from "react-toastify";
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleTheme, setStyles } from '../../redux/themeSlice'; // Import setStyles if needed
+import { ToastContainer, toast, Slide } from 'react-toastify';
 
 const Header = () => {
   const location = useLocation();
   const themeValues = useSelector((state) => state.theme);
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
   const dispatch = useDispatch();
-  const notify = () => toast("Feature is currently in testing!");
+  const notify = () => toast('Feature is currently in testing!');
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Project", path: "/project" },
-    { name: "Contact", path: "/contact" },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Project', path: '/project' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   const handleThemeToggle = () => {
@@ -29,15 +29,15 @@ const Header = () => {
     dispatch(
       setStyles({
         mainTheme: {
-          backgroundColor: themeValues.mode === "dark" ? "#f6f9fb" : "#0a0b0c", // swapped for post-toggle
-          color: themeValues.mode === "dark" ? "#000" : "#fff",
+          backgroundColor: themeValues.mode === 'dark' ? '#f6f9fb' : '#0a0b0c', // swapped for post-toggle
+          color: themeValues.mode === 'dark' ? '#000' : '#fff',
         },
         activeClass: {
-          activeColor: themeValues.mode === "dark" ? "#000" : "#fff",
-          nonActiveColor: themeValues.mode === "dark" ? "gray" : "#5d5d68",
+          activeColor: themeValues.mode === 'dark' ? '#000' : '#fff',
+          nonActiveColor: themeValues.mode === 'dark' ? 'gray' : '#5d5d68',
         },
         icon: {
-          color: themeValues.mode === "dark" ? "#000" : "#fff",
+          color: themeValues.mode === 'dark' ? '#000' : '#fff',
         },
       })
     );
@@ -49,7 +49,7 @@ const Header = () => {
       sx={{
         backgroundColor: styles.mainTheme.backgroundColor,
         color: styles.mainTheme.color,
-        zIndex: "99",
+        zIndex: '99',
       }}
     >
       <ToastContainer
@@ -71,9 +71,9 @@ const Header = () => {
       >
         <Box
           sx={{
-            fontSize: "18px",
-            cursor: "pointer",
-            fontWeight: "500",
+            fontSize: '18px',
+            cursor: 'pointer',
+            fontWeight: '500',
             color: styles.mainTheme.color,
           }}
         >
@@ -115,7 +115,7 @@ const Header = () => {
         </IconButton> */}
 
         <IconButton onClick={notify}>
-          <LuMoon className="icons" style={{ color: "#fff" }} />
+          <LuMoon className="icons" style={{ color: '#fff' }} />
         </IconButton>
       </Box>
     </Box>

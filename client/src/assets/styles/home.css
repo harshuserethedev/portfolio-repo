@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "clash_display";
-  src: url("/client/src/assets/fonts/ClashDisplay-Regular.otf");
+  font-family: 'clash_display';
+  src: url('/client/src/assets/fonts/ClashDisplay-Regular.otf');
 }
 
 .main {
@@ -15,7 +15,7 @@
   margin-top: 8%;
 }
 .headline {
-  font-family: "clash_display" !important;
+  font-family: 'clash_display' !important;
 }
 
 .css-u64c8x-MuiButtonBase-root-MuiButton-root {

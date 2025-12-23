@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
-import { LuSparkle } from "react-icons/lu";
-import { useSelector } from "react-redux";
-import "../../assets/styles/ChipsLoop.css";
-import { Chip, Avatar } from "@mui/material";
+import { useCallback, useEffect, useMemo, useRef, useState, memo } from 'react';
+import { LuSparkle } from 'react-icons/lu';
+import { useSelector } from 'react-redux';
+import '../../assets/styles/ChipsLoop.css';
+import { Chip, Avatar } from '@mui/material';
 
 const ANIMATION_CONFIG = {
   SMOOTH_TAU: 0.25,
@@ -11,17 +11,17 @@ const ANIMATION_CONFIG = {
 };
 
 const toCssLength = (value) =>
-  typeof value === "number" ? `${value}px` : (value ?? undefined);
+  typeof value === 'number' ? `${value}px` : (value ?? undefined);
 
-const cx = (...parts) => parts.filter(Boolean).join(" ");
+const cx = (...parts) => parts.filter(Boolean).join(' ');
 
 const useResizeObserver = (callback, elements, dependencies) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
       const handleResize = () => callback();
-      window.addEventListener("resize", handleResize);
+      window.addEventListener('resize', handleResize);
       callback();
-      return () => window.removeEventListener("resize", handleResize);
+      return () => window.removeEventListener('resize', handleResize);
     }
 
     const observers = elements.map((ref) => {
@@ -40,7 +40,7 @@ const useResizeObserver = (callback, elements, dependencies) => {
 
 const useImageLoader = (seqRef, onLoad, dependencies) => {
   useEffect(() => {
-    const images = seqRef.current?.querySelectorAll("img") ?? [];
+    const images = seqRef.current?.querySelectorAll('img') ?? [];
 
     if (images.length === 0) {
       onLoad();
@@ -60,15 +60,15 @@ const useImageLoader = (seqRef, onLoad, dependencies) => {
       if (htmlImg.complete) {
         handleImageLoad();
       } else {
-        htmlImg.addEventListener("load", handleImageLoad, { once: true });
-        htmlImg.addEventListener("error", handleImageLoad, { once: true });
+        htmlImg.addEventListener('load', handleImageLoad, { once: true });
+        htmlImg.addEventListener('error', handleImageLoad, { once: true });
       }
     });
 
     return () => {
       images.forEach((img) => {
-        img.removeEventListener("load", handleImageLoad);
-        img.removeEventListener("error", handleImageLoad);
+        img.removeEventListener('load', handleImageLoad);
+        img.removeEventListener('error', handleImageLoad);
       });
     };
   }, [onLoad, seqRef, dependencies]);
@@ -81,7 +81,7 @@ const useAnimationLoop = (
   seqHeight,
   isHovered,
   hoverSpeed,
-  isVertical,
+  isVertical
 ) => {
   const rafRef = useRef(null);
   const lastTimestampRef = useRef(null);
@@ -93,9 +93,9 @@ const useAnimationLoop = (
     if (!track) return;
 
     const prefersReduced =
-      typeof window !== "undefined" &&
+      typeof window !== 'undefined' &&
       window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const seqSize = isVertical ? seqHeight : seqWidth;
 
@@ -109,8 +109,8 @@ const useAnimationLoop = (
 
     if (prefersReduced) {
       track.style.transform = isVertical
-        ? "translate3d(0, 0, 0)"
-        : "translate3d(0, 0, 0)";
+        ? 'translate3d(0, 0, 0)'
+        : 'translate3d(0, 0, 0)';
       return () => {
         lastTimestampRef.current = null;
       };
@@ -170,8 +170,8 @@ export const ChipsLoop = memo(
   ({
     logos,
     speed = 120,
-    direction = "left",
-    width = "100%",
+    direction = 'left',
+    width = '100%',
     logoHeight = 28,
     gap = 32,
     pauseOnHover,
@@ -180,9 +180,9 @@ export const ChipsLoop = memo(
     fadeOutColor,
     scaleOnHover = false,
     renderItem,
-    ariaLabel = "Partner logos",
+    ariaLabel = 'Partner logos',
     className,
-    style
+    style,
   }) => {
     const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
 
@@ -202,15 +202,15 @@ export const ChipsLoop = memo(
       return 0;
     }, [hoverSpeed, pauseOnHover]);
 
-    const isVertical = direction === "up" || direction === "down";
+    const isVertical = direction === 'up' || direction === 'down';
 
     const targetVelocity = useMemo(() => {
       const magnitude = Math.abs(speed);
       let directionMultiplier;
       if (isVertical) {
-        directionMultiplier = direction === "up" ? 1 : -1;
+        directionMultiplier = direction === 'up' ? 1 : -1;
       } else {
-        directionMultiplier = direction === "left" ? 1 : -1;
+        directionMultiplier = direction === 'left' ? 1 : -1;
       }
       const speedMultiplier = speed < 0 ? -1 : 1;
       return magnitude * directionMultiplier * speedMultiplier;
@@ -252,7 +252,7 @@ export const ChipsLoop = memo(
     useResizeObserver(
       updateDimensions,
       [containerRef, seqRef],
-      [logos, gap, logoHeight, isVertical],
+      [logos, gap, logoHeight, isVertical]
     );
 
     useImageLoader(seqRef, updateDimensions, [
@@ -269,33 +269,33 @@ export const ChipsLoop = memo(
       seqHeight,
       isHovered,
       effectiveHoverSpeed,
-      isVertical,
+      isVertical
     );
 
     const cssVariables = useMemo(
       () => ({
-        "--logoloop-gap": `${gap}px`,
-        "--logoloop-logoHeight": `${logoHeight}px`,
-        ...(fadeOutColor && { "--logoloop-fadeColor": fadeOutColor }),
+        '--logoloop-gap': `${gap}px`,
+        '--logoloop-logoHeight': `${logoHeight}px`,
+        ...(fadeOutColor && { '--logoloop-fadeColor': fadeOutColor }),
       }),
-      [gap, logoHeight, fadeOutColor],
+      [gap, logoHeight, fadeOutColor]
     );
 
     const rootClasses = useMemo(
       () =>
         cx(
-          "relative group",
+          'relative group',
           isVertical
-            ? "overflow-hidden h-full inline-block"
-            : "overflow-x-hidden",
-          "[--logoloop-gap:32px]",
-          "[--logoloop-logoHeight:28px]",
-          "[--logoloop-fadeColorAuto:#ffffff]",
-          "dark:[--logoloop-fadeColorAuto:#0b0b0b]",
-          scaleOnHover && "py-[calc(var(--logoloop-logoHeight)*0.1)]",
-          className,
+            ? 'overflow-hidden h-full inline-block'
+            : 'overflow-x-hidden',
+          '[--logoloop-gap:32px]',
+          '[--logoloop-logoHeight:28px]',
+          '[--logoloop-fadeColorAuto:#ffffff]',
+          'dark:[--logoloop-fadeColorAuto:#0b0b0b]',
+          scaleOnHover && 'py-[calc(var(--logoloop-logoHeight)*0.1)]',
+          className
         ),
-      [isVertical, scaleOnHover, className],
+      [isVertical, scaleOnHover, className]
     );
 
     const handleMouseEnter = useCallback(() => {
@@ -320,7 +320,7 @@ export const ChipsLoop = memo(
             mb: isVertical ? 1 : 0,
             backgroundColor: styles?.mainTheme?.chipColor,
             fontWeight: 500,
-            boxShadow: "1px 1px 8px rgba(0, 0, 0, 0.07)",
+            boxShadow: '1px 1px 8px rgba(0, 0, 0, 0.07)',
             color: styles?.mainTheme?.color,
             border: styles?.mainTheme?.chipBorder,
             pl: 1,
@@ -334,31 +334,31 @@ export const ChipsLoop = memo(
       () =>
         Array.from({ length: copyCount }, (_, copyIndex) => (
           <ul
-            className={cx("flex items-center", isVertical && "flex-col")}
+            className={cx('flex items-center', isVertical && 'flex-col')}
             key={`copy-${copyIndex}`}
             role="list"
             aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
           >
             {logos.map((item, itemIndex) =>
-              renderLogoItem(item, `${copyIndex}-${itemIndex}`),
+              renderLogoItem(item, `${copyIndex}-${itemIndex}`)
             )}
           </ul>
         )),
-      [copyCount, logos, renderLogoItem, isVertical],
+      [copyCount, logos, renderLogoItem, isVertical]
     );
 
     const containerStyle = useMemo(
       () => ({
         width: isVertical
-          ? toCssLength(width) === "100%"
+          ? toCssLength(width) === '100%'
             ? undefined
             : toCssLength(width)
-          : (toCssLength(width) ?? "100%"),
+          : (toCssLength(width) ?? '100%'),
         ...cssVariables,
         ...style,
       }),
-      [width, cssVariables, style, isVertical],
+      [width, cssVariables, style, isVertical]
     );
 
     return (
@@ -378,17 +378,17 @@ export const ChipsLoop = memo(
                 <div
                   aria-hidden
                   className={cx(
-                    "pointer-events-none absolute inset-x-0 top-0 z-10",
-                    "h-[clamp(24px,8%,120px)]",
-                    "bg-[linear-gradient(to_bottom,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(255, 0, 0, 0)_100%)]",
+                    'pointer-events-none absolute inset-x-0 top-0 z-10',
+                    'h-[clamp(24px,8%,120px)]',
+                    'bg-[linear-gradient(to_bottom,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(255, 0, 0, 0)_100%)]'
                   )}
                 />
                 <div
                   aria-hidden
                   className={cx(
-                    "pointer-events-none absolute inset-x-0 bottom-0 z-10",
-                    "h-[clamp(24px,8%,120px)]",
-                    "bg-[linear-gradient(to_top,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]",
+                    'pointer-events-none absolute inset-x-0 bottom-0 z-10',
+                    'h-[clamp(24px,8%,120px)]',
+                    'bg-[linear-gradient(to_top,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
                   )}
                 />
               </>
@@ -397,17 +397,17 @@ export const ChipsLoop = memo(
                 <div
                   aria-hidden
                   className={cx(
-                    "pointer-events-none absolute inset-y-0 left-0 z-10",
-                    "w-[clamp(24px,8%,120px)]",
-                    "bg-[linear-gradient(to_right,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]",
+                    'pointer-events-none absolute inset-y-0 left-0 z-10',
+                    'w-[clamp(24px,8%,120px)]',
+                    'bg-[linear-gradient(to_right,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
                   )}
                 />
                 <div
                   aria-hidden
                   className={cx(
-                    "pointer-events-none absolute inset-y-0 right-0 z-10",
-                    "w-[clamp(24px,8%,120px)]",
-                    "bg-[linear-gradient(to_left,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]",
+                    'pointer-events-none absolute inset-y-0 right-0 z-10',
+                    'w-[clamp(24px,8%,120px)]',
+                    'bg-[linear-gradient(to_left,var(--logoloop-fadeColor,var(--logoloop-fadeColorAuto))_0%,rgba(0,0,0,0)_100%)]'
                   )}
                 />
               </>
@@ -418,9 +418,9 @@ export const ChipsLoop = memo(
         <div
           style={{ backgroundColor: styles?.mainTheme?.backgroundColor }}
           className={cx(
-            "flex will-change-transform select-none relative z-0",
-            "motion-reduce:transform-none",
-            isVertical ? "flex-col h-max w-full" : "flex-row w-max",
+            'flex will-change-transform select-none relative z-0',
+            'motion-reduce:transform-none',
+            isVertical ? 'flex-col h-max w-full' : 'flex-row w-max'
           )}
           ref={trackRef}
           onMouseEnter={handleMouseEnter}
@@ -430,9 +430,9 @@ export const ChipsLoop = memo(
         </div>
       </div>
     );
-  },
+  }
 );
 
-ChipsLoop.displayName = "ChipsLoops";
+ChipsLoop.displayName = 'ChipsLoops';
 
 export default ChipsLoop;
