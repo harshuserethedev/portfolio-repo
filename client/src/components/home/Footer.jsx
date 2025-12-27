@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import '../../assets/styles/footer.css';
+import SplitText from '../shared/SplitText';
 
 const Footer = () => {
   const styles = useSelector((state) => state.theme.styles);
@@ -83,9 +84,33 @@ const Footer = () => {
               fontFamily: 'clash_display',
             }}
           >
-            Let's create your
+            
+             <SplitText
+            key="Lets-create-your"
+            text="Let's create your"
+            delay={30}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+          />
             <br />
-            next big idea.
+           
+              <SplitText
+            key="Lets-create-your"
+            text="next big idea."
+            delay={30}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-50px"
+          />
           </h2>
 
           {/* Contact Button */}
