@@ -89,8 +89,7 @@ const AreaOfExpertise = () => {
             fontFamily: 'clash_display',
           }}
         >
-          
-           <SplitText
+          <SplitText
             key="areas-expertise"
             text="Areas of Expertise"
             delay={30}

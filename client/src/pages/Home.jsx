@@ -199,32 +199,31 @@ const Home = () => {
             
           </Typography> */}
           <Typography
-  className="headline"
-  variant="h1"
-  sx={{
-    fontSize: '72px',
-    fontWeight: '500',
-    color: styles?.mainTheme?.color,
-    width: '80%',
-    lineHeight: '72px',
-    marginTop: '2%',
-    marginBottom: '4%',
-    textAlign: 'center',
-  }}
->
-  <SplitText
-    text="Crafting purpose driven experiences that inspire & engage."
-    delay={30}
-    duration={0.6}
-    ease="power3.out"
-    splitType="chars"
-    from={{ opacity: 0, y: 40 }}
-    to={{ opacity: 1, y: 0 }}
-    threshold={0.1}
-    rootMargin="-100px"
-  />
-</Typography>
-
+            className="headline"
+            variant="h1"
+            sx={{
+              fontSize: '72px',
+              fontWeight: '500',
+              color: styles?.mainTheme?.color,
+              width: '80%',
+              lineHeight: '72px',
+              marginTop: '2%',
+              marginBottom: '4%',
+              textAlign: 'center',
+            }}
+          >
+            <SplitText
+              text="Crafting purpose driven experiences that inspire & engage."
+              delay={30}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+            />
+          </Typography>
         </Box>
 
         <Box

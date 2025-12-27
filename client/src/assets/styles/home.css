@@ -3,7 +3,6 @@
   src: url('/client/src/assets/fonts/ClashDisplay-Regular.otf');
 }
 
-
 .main {
   width: 100%;
   display: flex;
@@ -103,10 +102,10 @@
   .short-slogan-box {
     width: 60% !important;
   }
-  .split-parent{
-  font-size: 3rem !important;
-  line-height: 1;
-}
+  .split-parent {
+    font-size: 3rem !important;
+    line-height: 1;
+  }
 }
 
 @media (max-width: 499px) and (min-width: 300px) {
@@ -144,10 +143,10 @@
     background-color: #0a0a0a;
     margin-top: 8vw;
   }
-  .split-parent{
-  font-size: 3rem !important;
-  line-height: 1;
-}
+  .split-parent {
+    font-size: 3rem !important;
+    line-height: 1;
+  }
 }
 
 @media (max-width: 1280px) and (min-width: 300px) {
