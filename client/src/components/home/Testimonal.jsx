@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import ServiceCard from './ServiceCard';
 import TestimonialSlider from '../shared/TestimonialSlider';
 import ShinyText from '../shared/ShinyText';
+import SplitText from '../shared/SplitText';
 
 const Testimonal = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
@@ -53,7 +54,18 @@ const Testimonal = () => {
               fontFamily: 'clash_display',
             }}
           >
-            What others say
+            <SplitText
+              key="what-other-says"
+              text="What others say"
+              delay={30}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+            />
           </Typography>
 
           <Typography sx={{ color: '#8c8c9d', marginTop: '5px' }}>

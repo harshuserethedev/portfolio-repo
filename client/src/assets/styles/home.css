@@ -76,6 +76,7 @@
   height: 18vh;
   background-color: #0a0a0a;
   border-top: 1px solid #262626;
+  margin-top: 5%;
 }
 
 @media (max-width: 1028px) and (min-width: 600px) {
@@ -100,6 +101,10 @@
   }
   .short-slogan-box {
     width: 60% !important;
+  }
+  .split-parent {
+    font-size: 3rem !important;
+    line-height: 1;
   }
 }
 
@@ -137,6 +142,10 @@
     height: 12vh;
     background-color: #0a0a0a;
     margin-top: 8vw;
+  }
+  .split-parent {
+    font-size: 3rem !important;
+    line-height: 1;
   }
 }
 
