@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../assets/styles/home.css';
 import { Box, Button, ListItem, Typography } from '@mui/material';
 import { LuArrowUpRight, LuHand } from 'react-icons/lu';
@@ -151,6 +152,10 @@ const Home = () => {
     'knowme-button ' +
     (themeValues.mode === 'light' ? 'light-mode' : 'dark-mode');
 
+  const handleRedirect = (url) => {
+    window.open(url, '_blank');
+  };
+
   return (
     <>
       <Box
@@ -255,6 +260,9 @@ const Home = () => {
                   fontSize: '14px',
                   cursor: 'pointer',
                 }}
+                onClick={() =>
+                  handleRedirect('https://www.linkedin.com/in/harshuserethe/')
+                }
               >
                 LinkedIn <LuArrowUpRight size={20} />
               </ListItem>
@@ -264,6 +272,9 @@ const Home = () => {
                   fontSize: '14px',
                   cursor: 'pointer',
                 }}
+                onClick={() =>
+                  handleRedirect('https://github.com/HarshUserethe')
+                }
               >
                 GitHub <LuArrowUpRight size={20} />
               </ListItem>
@@ -273,6 +284,9 @@ const Home = () => {
                   fontSize: '14px',
                   cursor: 'pointer',
                 }}
+                onClick={() =>
+                  handleRedirect('https://www.behance.net/harshuserethe')
+                }
               >
                 Benance <LuArrowUpRight size={20} />
               </ListItem>
@@ -282,8 +296,11 @@ const Home = () => {
                   fontSize: '14px',
                   cursor: 'pointer',
                 }}
+                onClick={() =>
+                  handleRedirect('https://www.credly.com/users/harsh-userethe')
+                }
               >
-                Leetcode <LuArrowUpRight size={20} />
+                Credly <LuArrowUpRight size={20} />
               </ListItem>
             </Box>
 
