@@ -20,10 +20,12 @@ const SplitText = ({
   textAlign = 'left',
   tag = 'p',
   onLetterAnimationComplete,
+
 }) => {
   const ref = useRef(null);
   const animationCompletedRef = useRef(false);
   const [fontsLoaded, setFontsLoaded] = useState(false);
+
 
   useEffect(() => {
     if (document.fonts.status === 'loaded') {
