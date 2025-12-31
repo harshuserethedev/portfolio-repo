@@ -18,6 +18,7 @@ import ChipsLoop from '../components/shared/ChipsLoop';
 import Testimonal from '../components/home/Testimonal';
 import Footer from '../components/home/Footer';
 import SplitText from '../components/shared/SplitText';
+import Overlay from '../components/shared/Overlay';
 
 const Home = () => {
   const styles = useSelector((state) => state.theme.styles); // Get styles from Redux
@@ -158,6 +159,7 @@ const Home = () => {
 
   return (
     <>
+      <Overlay />
       <Box
         className="main"
         sx={{
@@ -166,6 +168,7 @@ const Home = () => {
           flexDirection: 'column',
         }}
       >
+      
         <Box className="inner-wrapper">
           <Typography
             variant="h1"
@@ -371,6 +374,7 @@ const Home = () => {
       />
       <Testimonal />
       <Footer />
+      
     </>
   );
 };

@@ -11,6 +11,7 @@ const getStyles = (mode) => ({
       mode === 'dark'
         ? '1px solid rgba(82, 82, 82, 1)'
         : '1px solid rgba(180, 180, 180, 1)',
+    overlayFadeColor :  mode === 'dark' ? 'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%)' : 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.7) 100%)',    
   },
   activeClass: {
     activeColor: mode === 'dark' ? '#fff' : '#000',
